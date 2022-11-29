@@ -5,8 +5,8 @@ GCCINCLDUDE		:= C:/mingw64/include
 OUTPUTNAME		:= VulkanTest
 LINKFILE		:= main.o
 
-${OUTPUTNAME}.exe: *.cpp *.hpp
-	g++ -I ${VULKANINCLUDE} -I ${GCCINCLDUDE} -L ${VULKANLIB}  -o ${OUTPUTNAME}.exe *.cpp ${LIBINCLUDE}
+${OUTPUTNAME}.exe: src/*.cpp src/*.hpp
+	g++ -I ${VULKANINCLUDE} -I ${GCCINCLDUDE} -L ${VULKANLIB}  -o ${OUTPUTNAME}.exe *.cpp src/*.cpp ${LIBINCLUDE}
 
 test: ${OUTPUTNAME}.exe
 	./${OUTPUTNAME}.exe
